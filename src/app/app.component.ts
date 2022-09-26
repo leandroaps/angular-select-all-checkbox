@@ -28,8 +28,8 @@ export class AppComponent {
 
   // The master checkbox will check/ uncheck all items
   checkUncheckAll() {
-    for (var i = 0; i < this.checklist.length; i++) {
-      this.checklist[i].isSelected = this.masterSelected;
+    for (const element of this.checklist) {
+      element.isSelected = this.masterSelected;
     }
     this.getCheckedItemList();
   }
@@ -45,9 +45,8 @@ export class AppComponent {
   // Get List of Checked Items
   getCheckedItemList() {
     this.checkedList = [];
-    for (var i = 0; i < this.checklist.length; i++) {
-      if (this.checklist[i].isSelected)
-        this.checkedList.push(this.checklist[i]);
+    for (const element of this.checklist) {
+      if (element.isSelected) this.checkedList.push(element);
     }
     this.checkedList = JSON.stringify(this.checkedList);
   }
