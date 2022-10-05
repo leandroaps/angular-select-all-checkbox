@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'How to select/unselect all checkbox';
   masterSelected: boolean;
-  checklist: any;
-  checkedList: any;
+  CHECKLIST: any;
+  CHECKED_LIST: any;
 
   constructor() {
     this.masterSelected = false;
-    this.checklist = [
+    this.CHECKLIST = [
       { id: 1, value: 'Elenor Anderson', isSelected: false },
       { id: 2, value: 'Caden Kunze', isSelected: true },
       { id: 3, value: 'Ms. Hortense Zulauf', isSelected: true },
@@ -28,7 +28,7 @@ export class AppComponent {
 
   // The master checkbox will check/ uncheck all items
   checkUncheckAll() {
-    for (const element of this.checklist) {
+    for (const element of this.CHECKLIST) {
       element.isSelected = this.masterSelected;
     }
     this.getCheckedItemList();
@@ -36,18 +36,18 @@ export class AppComponent {
 
   // Check All Checkbox Checked
   isAllSelected() {
-    this.masterSelected = this.checklist.every(function (item: any) {
-      return item.isSelected == true;
+    this.masterSelected = this.CHECKLIST.every(function (item: any) {
+      return item.isSelected;
     });
     this.getCheckedItemList();
   }
 
   // Get List of Checked Items
   getCheckedItemList() {
-    this.checkedList = [];
-    for (const element of this.checklist) {
-      if (element.isSelected) this.checkedList.push(element);
+    this.CHECKED_LIST = [];
+    for (const element of this.CHECKLIST) {
+      if (element.isSelected) this.CHECKED_LIST.push(element);
     }
-    this.checkedList = JSON.stringify(this.checkedList);
+    this.CHECKED_LIST = JSON.stringify(this.CHECKED_LIST);
   }
 }
