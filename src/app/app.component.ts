@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Select/ Unselect All Checkboxes in Angular - FreakyJolly.com';
+  title = 'How to select/unselect all checkbox';
   masterSelected: boolean;
   checklist: any;
   checkedList: any;
