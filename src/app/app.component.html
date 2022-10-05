@@ -3,18 +3,18 @@
   <h1>
     {{ title }}
   </h1>
-  <p>Angular 12 How to Check All/Uncheck All Checkbox List</p>
+  <p>How to select/unselect all checkbox</p>
 
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6">
         <ul class="list-group">
           <li class="list-group-item active" aria-current="true">
-            <input type="checkbox" [(ngModel)]="masterSelected" name="list_name" value="m1"
+            <input type="checkbox" [(ngModel)]="MASTER_SELECTED" name="list_name" value="m1"
               (change)="checkUncheckAll()" /><strong> Select/ Unselect All</strong>
           </li>
           <li class="list-group-item" *ngFor="let item of CHECKLIST">
-            <input type="checkbox" [(ngModel)]="item.isSelected" name="list_name" value="{{item.id}}"
+            <input type="checkbox" [(ngModel)]="item.IS_SELECTED" name="list_name" value="{{item.id}}"
               (change)="isAllSelected()" />
             {{item.value}}
           </li>
